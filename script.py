@@ -10,7 +10,6 @@ def AppendFile(file_name, data_input=None):
         f.write(f"\n{data_input}")
     print('Execution completed.')
 
-
 file = open('input.json')
 data = json.load(file)
 
@@ -20,7 +19,7 @@ for country in data:
         path = Path(f"countries/{country['filename']}.json")
         if path.is_file():
             country_code = country['code']
-            states_by_country_dict[f"{country_code}"] = f"{country_code}_STATES"
+            states_by_country_dict[f"{country_code}"] = f'{country_code}_STATES'
             region_data = json.load(open(path))
             tup_arr = []
             for region in region_data:
